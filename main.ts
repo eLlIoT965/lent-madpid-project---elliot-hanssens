@@ -1,6 +1,7 @@
 namespace SpriteKind {
     export const coin = SpriteKind.create()
 }
+let level = 0
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     if (jellyfish.vy == 0) {
         jellyfish.vy = -175
@@ -18,13 +19,11 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`tile2`, function (sprite, loc
     game.over(true, effects.starField)
 })
 function startlevel () {
-    let level = 0
     scene.setBackgroundColor(12)
     count = 0
     for (let index = 0; index <= 10 + level; index++) {
         foood = 0
     }
-    jellyfish.say("level" + level, 1000)
 }
 let foood = 0
 let jellyfish: Sprite = null
